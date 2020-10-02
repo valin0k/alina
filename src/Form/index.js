@@ -26,12 +26,14 @@ const data = generateRandomData(15, 1, 19)
 
 let right = 0
 let wrong = 0
+let unfilled = 0
 
 export default function Form({count, min, max}) {
   const [data, setData] = useState(generateRandomData(count, min, max))
   const [rightAnswers, setRightAnswers] = useState(0)
   const [wrongAnswers, setWrongAnswers] = useState(0)
   const [showAnswer, setShowAnswer] = useState(false)
+  const [filledFields, setFilledFields] = useState(0)
 
   const onPress = () => setShowAnswer(true)
 
@@ -48,7 +50,7 @@ export default function Form({count, min, max}) {
   return (
     <div className="form">
       {data.map(item => (
-        <Field {...item} showAnswer={showAnswer} onGetResult={onGetResult} />
+        <Field {...item} showAnswer={showAnswer} onGetResult={onGetResult} checkAnswers={false} />
       ))}
 
       <Timer stop={showAnswer} />
