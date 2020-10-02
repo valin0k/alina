@@ -79,7 +79,7 @@ export default function Form({count, min, max}) {
           <div>Правильные ответы: {rightAnswers}</div>
           <div>Неправильные ответы: {wrongAnswers}</div>
         </div>
-      ) : <button className={'submit_btn'} disabled={showAnswer} onClick={onPress}>Готово!</button>}
+      ) : <button className={'submit_btn start_btn'} disabled={showAnswer} onClick={onPress}>Готово!</button>}
     </div>
   );
 }

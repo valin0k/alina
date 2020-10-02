@@ -35,7 +35,7 @@ function App() {
       {start ? (
         <div className={'container'}>
           <Form count={Number(roundsCount) || 8} min={1} max={19} />
-          <button className={'submit_btn'} onClick={onReset}>Заново</button>
+          <button className={'submit_btn reset_btn'} onClick={onReset}>Заново</button>
         </div>
       ) : (
         <div className={'greeting'}>
@@ -44,7 +44,7 @@ function App() {
             <div className={'label'}>Сколько примеров будем решать?</div>
             <input placeholder={'Как насчет 8?'} className={'roundInput'} onChange={onChange} value={roundsCount}/>
           </div>
-          <button className={'submit_btn'} onClick={onStartPress}>Начать</button>
+          <button className={'submit_btn start_btn'} onClick={onStartPress}>Начать</button>
         </div>
       )}
     </div>
