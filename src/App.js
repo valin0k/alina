@@ -39,7 +39,7 @@ function App() {
         </div>
       ) : (
         <div className={'greeting'}>
-          <h2>Привет, Алина!</h2>
+          <h2 className={'alina'}>Привет, Алина!</h2>
           <div className={'fieldItem'}>
             <div className={'label'}>Сколько примеров будем решать?</div>
             <input placeholder={'Как насчет 8?'} className={'roundInput'} onChange={onChange} value={roundsCount}/>
