@@ -5,13 +5,15 @@ function getResult(val1, val2, sign) {
   return sign === '+' ? val1 + val2 : val1 - val2
 }
 
-export default function ({ val1, val2, sign, showAnswer, onGetResult }) {
+export default function ({ val1, val2, sign, showAnswer, onGetResult, onFillField, index }) {
   const [value, setValue] = useState('')
 
   const onChange = (value) => {
     const num = value.target.value
     if(!isNaN(num)) {
       setValue(num.trim())
+
+      onFillField(!!num.trim().length, index)
     }
   }
 
