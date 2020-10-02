@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/alina/static/css/main.802f8f68.chunk.css",
-    "main.js": "/alina/static/js/main.ab98acb9.chunk.js",
-    "main.js.map": "/alina/static/js/main.ab98acb9.chunk.js.map",
+    "main.css": "/alina/static/css/main.48ece28b.chunk.css",
+    "main.js": "/alina/static/js/main.da0c8d68.chunk.js",
+    "main.js.map": "/alina/static/js/main.da0c8d68.chunk.js.map",
     "runtime-main.js": "/alina/static/js/runtime-main.afe677da.js",
     "runtime-main.js.map": "/alina/static/js/runtime-main.afe677da.js.map",
-    "static/js/2.0368c16d.chunk.js": "/alina/static/js/2.0368c16d.chunk.js",
-    "static/js/2.0368c16d.chunk.js.map": "/alina/static/js/2.0368c16d.chunk.js.map",
+    "static/js/2.11c3a3d0.chunk.js": "/alina/static/js/2.11c3a3d0.chunk.js",
+    "static/js/2.11c3a3d0.chunk.js.map": "/alina/static/js/2.11c3a3d0.chunk.js.map",
     "index.html": "/alina/index.html",
-    "precache-manifest.f517e4af2a2446c6d9c1ddd9b838468f.js": "/alina/precache-manifest.f517e4af2a2446c6d9c1ddd9b838468f.js",
+    "precache-manifest.e77e39aea23cdfec6849da2dc5841160.js": "/alina/precache-manifest.e77e39aea23cdfec6849da2dc5841160.js",
     "service-worker.js": "/alina/service-worker.js",
-    "static/css/main.802f8f68.chunk.css.map": "/alina/static/css/main.802f8f68.chunk.css.map",
-    "static/js/2.0368c16d.chunk.js.LICENSE.txt": "/alina/static/js/2.0368c16d.chunk.js.LICENSE.txt"
+    "static/css/main.48ece28b.chunk.css.map": "/alina/static/css/main.48ece28b.chunk.css.map",
+    "static/js/2.11c3a3d0.chunk.js.LICENSE.txt": "/alina/static/js/2.11c3a3d0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.afe677da.js",
-    "static/js/2.0368c16d.chunk.js",
-    "static/css/main.802f8f68.chunk.css",
-    "static/js/main.ab98acb9.chunk.js"
+    "static/js/2.11c3a3d0.chunk.js",
+    "static/css/main.48ece28b.chunk.css",
+    "static/js/main.da0c8d68.chunk.js"
   ]
 }
