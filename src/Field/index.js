@@ -14,11 +14,12 @@ export default function ({ val1, val2, sign, showAnswer, onGetResult }) {
       setValue(num.trim())
     }
   }
-console.info("__getResult(val1, val2, sign)__", getResult(val1, val2, sign))
 
   useEffect(() => {
     showAnswer && onGetResult(value && getResult(val1, val2, sign) === Number(value))
   }, [showAnswer])
+
+  const isRight = showAnswer && value && getResult(val1, val2, sign) === Number(value)
 
   return (
     <div className="wrapper">
@@ -28,13 +29,19 @@ console.info("__getResult(val1, val2, sign)__", getResult(val1, val2, sign))
         <div className={'val'}>{val2}</div>
         <div className={'equal_sign'}>=</div>
       </div>
-      <input maxLength={2} value={value} className="input" disabled={showAnswer} onChange={onChange} />
+
 
       {showAnswer && value ? (
-        <div className={'answer'}>
-          {getResult(val1, val2, sign) === Number(value) ? 'Ураа' : 'нет'}
-        </div>
-      ) : null}
+        <>
+          <div className={'yourAnswer'}>
+            {value}
+            <span className={'rightAnswer'}>{!isRight ? ' (' + getResult(val1, val2, sign) + ') ' : null}</span>
+          </div>
+          <div className={'answer ' + (isRight ? 'answerTrue' : 'answerFalse')}>
+            {isRight ? '✓' : '✖️'}
+          </div>
+        </>
+      ) : <input maxLength={2} value={value} className="input" disabled={showAnswer} onChange={onChange} />}
     </div>
   );
 }

@@ -52,3 +52,30 @@
 .equal_sign {
   color: #6e6e6e;
 }
+
+.answer {
+  padding: 5px 9px;
+  border-radius: 40px;
+}
+
+.answerTrue {
+  background: lightgreen;
+  border: 2px solid green;
+  color: green;
+}
+
+.answerFalse {
+  padding: 2px 7px;
+  background: #ee9090;
+  border: 2px solid #571818;
+}
+
+.yourAnswer {
+  font-size: 24px;
+  color: #454545;
+}
+
+.rightAnswer {
+  font-size: 20px;
+  color: gray;
+}
