@@ -11,13 +11,32 @@ function randomInteger(min, max) {
 function generateRandomData(count, min, max) {
   return Array(count).fill(1).map((_) => {
     const sign = Math.random() > 0.5 ? '+' : '-'
-    let firstValue = randomInteger(min, max)
-    let secondValue = randomInteger(min, max)
+
+    let firstValue
+    let secondValue
+
+    firstValue = randomInteger(min, max)
+    secondValue = randomInteger(min, max)
+
+    if(sign === '+') {
+      while(firstValue + secondValue > max) {
+        firstValue = randomInteger(min, max)
+        secondValue = randomInteger(min, max)
+      }
+
+      return {
+        sign,
+        val1: firstValue,
+        val2: secondValue,
+        key: Math.random()
+      }
+    }
 
     return {
       sign,
       val1: firstValue > secondValue ? firstValue : secondValue,
-      val2: firstValue > secondValue ? secondValue : firstValue
+      val2: firstValue > secondValue ? secondValue : firstValue,
+      key: Math.random()
     }
   })
 }
@@ -50,7 +69,7 @@ export default function Form({count, min, max}) {
   return (
     <div className="form">
       {data.map(item => (
-        <Field {...item} showAnswer={showAnswer} onGetResult={onGetResult} checkAnswers={false} />
+        <Field {...item} showAnswer={showAnswer} onGetResult={onGetResult} checkAnswers={false} key={item.key} />
       ))}
 
       <Timer stop={showAnswer} />
