@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import Field from './Field'
+import Timer from './Timer'
+import Form from './Form'
 import './App.css';
 
 function App() {
+  const [roundsCount, setRoundsCount] = useState('')
+  const [start, setStart] = useState(false)
+
+
+  const onStartPress = () => setStart(true)
+
+  const onChange = ({target: {value}}) => {
+    if(!isNaN(value)) {
+      setRoundsCount(value.trim())
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {start ? (
+        <Form count={Number(roundsCount) || 8} min={1} max={19} />
+      ) : (
+        <div className={'greeting'}>
+          <h2>Привет, Алина!</h2>
+          <div className={'fieldItem'}>
+            <div className={'label'}>Сколько примеров будем решать?</div>
+            <input className={'roundInput'} onChange={onChange} value={roundsCount}/>
+          </div>
+          <button className={'submit_btn'} onClick={onStartPress}>Начать</button>
+        </div>
+      )}
     </div>
   );
 }
