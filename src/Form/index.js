@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Field from '../Field'
 import Timer from '../Timer'
-import { getKey, getTodayData, addEntryToday } from '../helpers'
+import { addEntryToday } from '../helpers'
 import "./index.css";
 
 function randomInteger(min, max) {
@@ -79,8 +79,6 @@ export default function Form({count, min, max}) {
   }
 
   React.useEffect(() => {
-    // const todayData = getTodayData()
-
     if(showAnswer) {
       addEntryToday(right, wrong, 0)
       right = 0
