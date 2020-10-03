@@ -1,0 +1,24 @@
+.historyList {
+    margin-top: 30px;
+}
+
+.historyItem {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    flex-direction: column;
+    display: flex;
+    text-align: left;
+    border-bottom: 3px solid #7986d7;
+}
+
+.grayText {
+    color: #666666;
+}
+
+.darkText {
+    color: #0b044b;
+}
+
+.historyDate {
+    margin-bottom: 10px;
+}

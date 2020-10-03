@@ -13,8 +13,8 @@ export default ({stop, onStop}) => {
 
   useEffect(() => {
     if(stop) {
-      stop && setEndTimer(Date.now)
-      onStop(endTimer - startTimer)
+      setEndTimer(Date.now)
+      onStop(Date.now() - startTimer)
     }
   }, [stop])
 

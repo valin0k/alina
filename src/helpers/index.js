@@ -32,18 +32,23 @@ export const addEntryToday = (rightCount, wrongCount, time) => {
   }
 }
 
-export const getWeekData = (days) => {
+export const getPeriodData = (days) => {
   const data = []
   let lastItem = 1
   let counter = 0
-  
+
   const date = new Date(); // today
-  // d.setDate(d.getDate() - 1); // yesterday:
-  // d.setDate(d.getDate() + 1); // tomorrow:
-  while((days && days <= counter++) || (!days && !lastItem)) {
-    lastItem = getTodayData(d.setDate(d.getDate() - counter))
-    
-    data.push(lastItem)
+
+  while((days && days > counter) || (!days && !lastItem)) {
+    lastItem = getTodayData(date.setDate(date.getDate() - (counter ? 1 : 0)))
+
+    data.push({...lastItem, date: `${date.getDate()} ${monthNames[date.getMonth()]}`})
+    ++counter
   }
-  console.info("__data__", data)
+
+  return data
 }
+
+const monthNames = ["января", "февраля", "марта", "апреля", "мая", "июня",
+  "июля", "августа", "сентября", "октября", "ноября", "декабря"
+];
