@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Field from '../Field'
 import Timer from '../Timer'
+import { getKey, getTodayData, addEntryToday } from '../helpers'
 import "./index.css";
 
 function randomInteger(min, max) {
@@ -76,6 +77,16 @@ export default function Form({count, min, max}) {
   const onFillField = (value, index) => {
     setFilledFields({...filledFields, [index]: value})
   }
+
+  React.useEffect(() => {
+    // const todayData = getTodayData()
+
+    if(showAnswer) {
+      addEntryToday(right, wrong, 0)
+      right = 0
+      wrong = 0
+    }
+  }, [showAnswer])
 
   const canSubmit = Object.values(filledFields).filter(Boolean).length === count
 
