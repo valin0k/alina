@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b66a99601428bbf23f70305cd88c6986",
+    "revision": "71528900f0be02892af0a3ee5f0c6923",
     "url": "/alina/index.html"
   },
   {
-    "revision": "f411eeacd212fcfb6733",
-    "url": "/alina/static/css/main.db4b9660.chunk.css"
+    "revision": "a19c7b097de22315e475",
+    "url": "/alina/static/css/main.42051162.chunk.css"
   },
   {
     "revision": "6bce5485fa56a919bb1b",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/alina/static/js/2.632ce725.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f411eeacd212fcfb6733",
-    "url": "/alina/static/js/main.098a0502.chunk.js"
+    "revision": "a19c7b097de22315e475",
+    "url": "/alina/static/js/main.a8d09f0d.chunk.js"
   },
   {
     "revision": "7a3f71871d56b666bd08",
