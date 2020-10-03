@@ -43,7 +43,7 @@ export default function ({ val1, val2, sign, showAnswer, onGetResult, onFillFiel
             {isRight ? '✓' : '✖️'}
           </div>
         </>
-      ) : <input maxLength={2} value={value} className="input" disabled={showAnswer} onChange={onChange} />}
+      ) : <input maxLength={2} value={value} className="input" disabled={showAnswer} onChange={onChange} inputMode={'numeric'} />}
     </div>
   );
 }

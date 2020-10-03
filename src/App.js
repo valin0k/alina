@@ -63,7 +63,7 @@ function App() {
           <h2 className={'alina'}>Привет, Алина!</h2>
           <div className={'fieldItem'}>
             <div className={'label'}>Сколько примеров будем решать?</div>
-            <input placeholder={'Как насчет 8?'} className={'roundInput'} onChange={onChange} value={roundsCount}/>
+            <input inputMode={'numeric'} placeholder={'Как насчет 8?'} className={'roundInput'} onChange={onChange} value={roundsCount}/>
           </div>
           <button className={'submit_btn start_btn'} onClick={onStartPress}>Начать</button>
           <button className={'submit_btn start_btn'} onClick={onShowHistory}>Мои занятия</button>

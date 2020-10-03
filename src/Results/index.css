@@ -8,7 +8,6 @@
     flex-direction: column;
     display: flex;
     text-align: left;
-    border-bottom: 3px solid #7986d7;
 }
 
 .grayText {
@@ -21,4 +20,21 @@
 
 .historyDate {
     margin-bottom: 10px;
+}
+
+.progressLine {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    height: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.progressRight {
+    background: #269b26;
+}
+
+.progressWrong {
+    background: #b23636;
 }
