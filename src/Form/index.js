@@ -54,6 +54,7 @@ const data = generateRandomData(15, 1, 19)
 
 let right = 0
 let wrong = 0
+let timer = 0
 
 export default function Form({count, min, max}) {
   const [data, setData] = useState(generateRandomData(count, min, max))
@@ -78,11 +79,16 @@ export default function Form({count, min, max}) {
     setFilledFields({...filledFields, [index]: value})
   }
 
+  const onTimerStop = (time) => {
+    timer = time
+  }
+
   React.useEffect(() => {
     if(showAnswer) {
-      addEntryToday(right, wrong, 0)
+      addEntryToday(right, wrong, timer)
       right = 0
       wrong = 0
+      timer = 0
     }
   }, [showAnswer])
 
@@ -101,7 +107,7 @@ export default function Form({count, min, max}) {
         />
       ))}
 
-      <Timer stop={showAnswer} />
+      <Timer stop={showAnswer} onStop={onTimerStop} />
       {showAnswer ? (
         <div>
           <br/>

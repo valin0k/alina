@@ -7,12 +7,15 @@ function getTime(time) {
   return 'Ты справилась за: ' + mins + ' мин. ' + Math.floor(sec / 1000) + ' сек.'
 }
 
-export default ({stop}) => {
+export default ({stop, onStop}) => {
   const [startTimer, setStartTimer] = useState(Date.now())
   const [endTimer, setEndTimer] = useState(0)
 
   useEffect(() => {
-    stop && setEndTimer(Date.now)
+    if(stop) {
+      stop && setEndTimer(Date.now)
+      onStop(endTimer - startTimer)
+    }
   }, [stop])
 
   return (

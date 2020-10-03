@@ -6,8 +6,8 @@ export const getKey = (date = Date.now()) => {
   return `${year}/${month}/${day}}`
 }
 
-export const getTodayData = () => {
-  const todayData = localStorage.getItem(getKey())
+export const getTodayData = (date) => {
+  const todayData = localStorage.getItem(getKey(date))
 
   if(todayData) {
     return JSON.parse(todayData)
@@ -30,4 +30,20 @@ export const addEntryToday = (rightCount, wrongCount, time) => {
   } else {
     localStorage.setItem(key, newData)
   }
+}
+
+export const getWeekData = (days) => {
+  const data = []
+  let lastItem = 1
+  let counter = 0
+  
+  const date = new Date(); // today
+  // d.setDate(d.getDate() - 1); // yesterday:
+  // d.setDate(d.getDate() + 1); // tomorrow:
+  while((days && days <= counter++) || (!days && !lastItem)) {
+    lastItem = getTodayData(d.setDate(d.getDate() - counter))
+    
+    data.push(lastItem)
+  }
+  console.info("__data__", data)
 }
